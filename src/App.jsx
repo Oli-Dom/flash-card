@@ -22,6 +22,7 @@ function App() {
   const [count, setCount] = useState(data.length);
   const [text, setText] = useState(data[0].description);
   const [iTracker, setTracker] = useState(0);
+  const [answer, setAnswer] = useState(data[0].breed);
 
   const addCard = () => {
     const userBreed = window.prompt('Enter the breed:');
@@ -34,13 +35,10 @@ function App() {
     setCount(count + 1);
   };
 
-  const showAnswer = () => {
-    setText(data[iTracker].breed);
-  };
-
   const nextCard = () => {
     setTracker(iTracker + 1);
     setText(data[iTracker + 1].description);
+    setAnswer(data[iTracker + 1].breed);
   };
 
   return (
@@ -50,14 +48,15 @@ function App() {
         <h2>Lets see how much you know about dog breeds</h2>
         <h3>Number of cards: {count}</h3>
       </div>
-      <div className="container">
-        <div className="card-container" onClick={showAnswer}>
-          {text}
+      <div className="card">
+        <div className="content">
+          <div className="front">{text}</div>
+          <div className="back">{answer}</div>
         </div>
-        <div className="userActions">
-          <button onClick={nextCard}>next</button>
-          <button onClick={addCard}>Add a Breed</button>
-        </div>
+      </div>
+      <div className="userActions">
+        <button onClick={nextCard}>next</button>
+        <button onClick={addCard}>Add a Breed</button>
       </div>
     </div>
   );

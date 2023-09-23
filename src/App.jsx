@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
+
 function App() {
-  const data = [
+  const initialData = [
     {
       description:
         "loved by celebrities, drools a lot, and can't swim due to their flat nose",
@@ -19,10 +20,11 @@ function App() {
     },
   ];
 
-  const [count, setCount] = useState(data.length);
-  const [text, setText] = useState(data[0].description);
+  const [count, setCount] = useState(initialData.length);
+  const [text, setText] = useState(initialData[0].description);
   const [iTracker, setTracker] = useState(0);
-  const [answer, setAnswer] = useState(data[0].breed);
+  const [answer, setAnswer] = useState(initialData[0].breed);
+  const [usedIndices, setUsedIndices] = useState([0]);
 
   const addCard = () => {
     const userBreed = window.prompt('Enter the breed:');
@@ -31,14 +33,29 @@ function App() {
       description: userFacts,
       breed: userBreed,
     };
-    data.push(newData);
     setCount(count + 1);
+    initialData.push(newData);
   };
 
   const nextCard = () => {
-    setTracker(iTracker + 1);
-    setText(data[iTracker + 1].description);
-    setAnswer(data[iTracker + 1].breed);
+    if (usedIndices.length === count) {
+      // All cards have been shown, reset usedIndices array
+      setUsedIndices([]);
+      setText(initialData[0].description);
+      setAnswer(initialData[0].breed);
+      setTracker(0);
+      return;
+    }
+
+    let newIndex;
+    do {
+      newIndex = Math.floor(Math.random() * count);
+    } while (usedIndices.includes(newIndex));
+
+    setUsedIndices([...usedIndices, newIndex]);
+    setTracker(newIndex);
+    setText(initialData[newIndex].description);
+    setAnswer(initialData[newIndex].breed);
   };
 
   return (

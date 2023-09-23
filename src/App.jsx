@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 
 function App() {
-  const initialData = [
+  const [initialData, setInitialData] = useState([
     {
       description:
         "loved by celebrities, drools a lot, and can't swim due to their flat nose",
@@ -18,7 +18,7 @@ function App() {
         'Originated in the mountains of Europe, common to have two different color eyes, often associated with cowboy culture',
       breed: 'Australian Shepherd',
     },
-  ];
+  ]);
 
   const [count, setCount] = useState(initialData.length);
   const [text, setText] = useState(initialData[0].description);
@@ -33,8 +33,13 @@ function App() {
       description: userFacts,
       breed: userBreed,
     };
-    setCount(count + 1);
-    initialData.push(newData);
+
+    // Clone the initialData array and add the new card to the clone
+    const newDataArray = [...initialData, newData];
+
+    setCount(newDataArray.length);
+    setInitialData(newDataArray); // Update the initialData state variable
+    console.log(newDataArray);
   };
 
   const nextCard = () => {

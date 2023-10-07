@@ -96,7 +96,7 @@ function App() {
   };
 
   const checkAnswer = () => {
-    if (userAnswer.toLowerCase === answer.toLowerCase) {
+    if (userAnswer === answer) {
       // Correct answer, set the input box border color to green
       setInputBorderColor('green');
     } else {

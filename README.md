@@ -1,49 +1,49 @@
-# Web Development Project 2 - Doginator (Akinator reference)
+# Web Development Project 3 - _Doginator_
 
-Submitted by: **Oliver Dominguez**
+Submitted by: **Oliver**
 
-This web app: **Allows the user to be tested on different facts about dog breeds and helps them learn more about those specific breeds**
+This web app: **Allows you to test how much you know about dog breeds**
 
-Time spent: **2** hours spent in total
+Time spent: **30** minutes spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
-- [x] **The title of the card set and some information about it, such as a short description and the total number of cards are displayed**
-- [x] **A single card at a time is displayed, only showing one of the components of the information pair**
-- [x] **A list of card pairs is created**
-- [x] **Clicking on the card shows the corresponding component of the information pair**
-- [x] **Clicking the next button displays a random new card**
+- [x] **The user can enter their guess in a box before seeing the flipside of the card**
+- [x] **Clicking on a submit button shows visual feedback about whether the answer was correct or incorrect**
+- [x] **A back button is displayed on the card and can be used to return to the previous card in a set sequence**
+- [x] **A next button is displayed on the card and can be used to navigate to the next card in a set sequence**
 
 The following **optional** features are implemented:
 
-- [ ] Cards contains images in addition to or in place of text
-- [ ] Cards have different visual styles such as color based on their category
-  - [ ] _visual style implemented_
+- [ ] A shuffle button is used to randomize the order of the cards
+- [ ] A user's answer may be counted as correct even when it is slightly different from the target answer
+- [ ] A counter displays the user's current and longest streak of correct responses
+- [ ] A user can mark a card that they have mastered and have it removed from the pool of answers as well as added to a list of mastered cards
 
 The following **additional** features are implemented:
 
-- Gave the user the ability to add their own breed and facts.
+- [x] user can create new cards
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented required features:
+Here's a walkthrough of implemented user stories:
 
-<img src='https://imgur.com/a/NSqKczy' title='Video Walkthrough' width='30px' alt='Video Walkthrough' />
+<img src='https://imgur.com/a/8hgWiRz' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 
-GIF created with ...[ScreenToGif](https://www.screentogif.com/) for Windows
+GIF created with ... [ScreenToGif](https://www.screentogif.com/) for Windows
 
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
-
+[ScreenToGif](https://www.screentogif.com/) for Windows
 [peek](https://github.com/phw/peek) for Linux. -->
 
 ## Notes
 
-Getting it to be random was pretty difficult at first.
+None really, I just followed the example that we did in class whenver I was a bit lost.
 
 ## License
 
